@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  AcademicCapIcon, 
-  BookOpenIcon, 
-  ChatBubbleLeftRightIcon, 
-  Cog6ToothIcon, 
-  UserGroupIcon,
-  SparklesIcon,
-  BoltIcon,
-  HeartIcon,
-  CpuChipIcon,
   FireIcon,
   XMarkIcon,
   ComputerDesktopIcon,
