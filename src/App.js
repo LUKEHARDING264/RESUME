@@ -272,7 +272,7 @@ function App() {
           >
             <a href="tel:+14158588783" className="hover:text-neon-blue transition-colors">📱 (415) 858-8783</a>
             <a href="mailto:lukeharding264@gmail.com" className="hover:text-neon-blue transition-colors">✉️ lukeharding264@gmail.com</a>
-            <span>📍 San Francisco Bay Area</span>
+            <span>📍 Chico, Ca</span>
           </motion.div>
         </div>
       </section>
