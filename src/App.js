@@ -46,6 +46,79 @@ function Modal({ isOpen, onClose, children }) {
   );
 }
 
+function ContactForm() {
+  return (
+    <motion.div
+      className="max-w-2xl mx-auto p-8 bg-black/30 rounded-xl backdrop-blur-sm border border-chrome-silver/30"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <form 
+        action="https://formsubmit.co/lukeharding264@gmail.com" 
+        method="POST"
+        className="space-y-6"
+      >
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-chrome-silver mb-2">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            className="w-full px-4 py-2 bg-black/50 border border-chrome-silver/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium text-chrome-silver mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            className="w-full px-4 py-2 bg-black/50 border border-chrome-silver/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+          />
+        </div>
+        <div>
+          <label htmlFor="business" className="block text-sm font-medium text-chrome-silver mb-2">
+            Business
+          </label>
+          <input
+            type="text"
+            name="business"
+            id="business"
+            required
+            className="w-full px-4 py-2 bg-black/50 border border-chrome-silver/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+          />
+        </div>
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-chrome-silver mb-2">
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            rows="4"
+            required
+            className="w-full px-4 py-2 bg-black/50 border border-chrome-silver/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon-blue text-white"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          className="w-full py-3 px-6 bg-gradient-to-r from-crimson to-neon-blue text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Send Message
+        </button>
+      </form>
+    </motion.div>
+  );
+}
+
 function App() {
   const [selectedJob, setSelectedJob] = useState(null);
 
@@ -215,14 +288,11 @@ function App() {
             viewport={{ once: true }}
           >
             <div className="relative mx-auto w-96 h-96 mb-8">
-              {/* Border gradient effect */}
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-neon-blue to-crimson p-[2px]">
-                <div className="absolute inset-[2px] bg-black rounded-lg"></div>
-              </div>
+              {/* Remove the border gradient effect and background */}
               <img 
                 src="/RIMAGE/ru.png" 
                 alt="Profile" 
-                className="relative w-full h-full object-contain rounded-lg z-10 p-4"
+                className="relative w-full h-full object-contain z-10"
               />
             </div>
           </motion.div>
@@ -585,57 +655,7 @@ function App() {
           >
             Get in Touch
           </motion.h2>
-          <motion.form
-            className="space-y-6 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full p-4 bg-black/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-neon-blue text-lg"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full p-4 bg-black/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-neon-blue text-lg"
-            />
-            <input
-              type="text"
-              placeholder="Business"
-              className="w-full p-4 bg-black/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-neon-blue text-lg"
-            />
-            <input
-              type="text"
-              placeholder="Position"
-              className="w-full p-4 bg-black/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-neon-blue text-lg"
-            />
-            <textarea
-              placeholder="Message"
-              rows="4"
-              className="w-full p-4 bg-black/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-neon-blue text-lg"
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full py-4 bg-crimson text-white rounded-xl font-bold text-lg hover:bg-crimson/90 transition-colors"
-            >
-              Send Message
-            </motion.button>
-          </motion.form>
-          <motion.div
-            className="mt-12 text-center space-y-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-gray-500">808 West 2cd Ave Acacia Apartments, Chico, CA 95926</p>
-            <p className="text-gray-500">(415) 858-8783</p>
-            <p className="text-gray-500">Lukeharding264@gmail.com</p>
-          </motion.div>
+          <ContactForm />
         </div>
       </section>
 
