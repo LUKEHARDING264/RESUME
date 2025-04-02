@@ -7,7 +7,11 @@ import {
   ClockIcon,
   PaintBrushIcon,
   VideoCameraIcon,
-  BookmarkIcon
+  BookmarkIcon,
+  CpuChipIcon,
+  ChatBubbleLeftRightIcon,
+  BoltIcon,
+  HeartIcon
 } from '@heroicons/react/24/outline';
 
 function Modal({ isOpen, onClose, children }) {

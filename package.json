@@ -2,6 +2,9 @@
   "name": "luke-harding-resume",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "framer-motion": "^11.0.5",
